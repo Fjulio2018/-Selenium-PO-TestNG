@@ -1,9 +1,14 @@
 package ui_testing.naveen.pages;
 
+import org.openqa.selenium.WebDriver;
+
 public class RegisterAccount {
 
     public static String h1Locator = "//*[@id='content']/h1";
     public static String registerLegendLocator = "//*[@id='account']/legend";
+
+    public RegisterAccount(WebDriver driver) {
+    }
 
     public static String getH1Locator() {
         return h1Locator;

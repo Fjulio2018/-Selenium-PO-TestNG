@@ -39,9 +39,9 @@ public class HomePage {
         myAccountElement.click();
     }
 
-    public static AccountPage clickRegisterLink(WebDriver driver) {
+    public static RegisterAccount clickRegisterLink(WebDriver driver) {
         WebElement registerElement = driver.findElement(By.cssSelector(registerLink));
         registerElement.click();
-        return new AccountPage(driver);
+        return new RegisterAccount(driver);
     }
 }
