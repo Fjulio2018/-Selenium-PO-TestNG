@@ -12,15 +12,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ui_testing.naveen.pages.HomePage;
 import ui_testing.naveen.pages.RegisterAccount;
 
 
-
-
-public class SelTestNG {
+public class TestToTest {
 
     public WebDriver driver;
     public static ExtentTest test;
@@ -68,4 +65,6 @@ public class SelTestNG {
         extent.flush();
         driver.quit();
     }
+
+
 }
