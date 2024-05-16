@@ -18,14 +18,12 @@ import ui_testing.naveen.pages.HomePage;
 import ui_testing.naveen.pages.RegisterAccount;
 
 
-
-
 public class SelTestNG {
 
     public WebDriver driver;
     public static ExtentTest test;
     ExtentReports extent = new ExtentReports();
-    String actualText;
+    String actualTextTest;
 
     @BeforeSuite
     public void setUp() {
@@ -45,19 +43,17 @@ public class SelTestNG {
         HomePage.validateElements(driver);
         HomePage.clickRegisterLink(driver);
 
-        String expectedText = "Your Personal Details";
-        WebElement registerLegendElement = driver.findElement(By.xpath(RegisterAccount.getRegisterLegendLocator()));
-        String actualText = registerLegendElement.getText();
+        String expectedTextRegLegend = "Your Personal Details";
+        String actualTextRegLegemd = RegisterAccount.getActualText(driver);
 
 
         try {
-            Assert.assertEquals(actualText, expectedText);
+            Assert.assertEquals(actualTextRegLegemd, expectedTextRegLegend);
             test.log(Status.PASS, "Test Sucesseful");
         } catch (AssertionError e) {
             test.log(Status.FAIL, "The test was not successful. : " + e.getMessage());
-            Assert.assertEquals(actualText, expectedText, "The text on the registration page does not match what was expected.");
+            Assert.assertEquals(actualTextRegLegemd, expectedTextRegLegend, "The text on the registration page does not match what was expected.");
         }
-
 
 
     }
