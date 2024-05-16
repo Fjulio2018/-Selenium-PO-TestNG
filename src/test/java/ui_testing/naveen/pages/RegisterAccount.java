@@ -22,7 +22,9 @@ public class RegisterAccount {
 
     public static String getActualText(WebDriver driver) {
         WebElement registerLegendElement = driver.findElement(By.xpath(registerLegendLocator));
-        return registerLegendElement.getText();
+        String legendText = registerLegendElement.getText();
+        System.out.println("Este é o texto da legenda: " + legendText);
+        return legendText;
     }
 
     public static void regLegenda_verify(WebDriver driver) throws IOException {
