@@ -27,7 +27,9 @@ public class TestToTest {
     public void setUp() {
 
         WebDriverManager.chromedriver().setup();
+        System.out.println("Iniciando o ChromeDriver");
         driver = new ChromeDriver();
+        System.out.println("Inicia o ChromeDriver Com sucesso");
         driver.get("https://naveenautomationlabs.com/opencart/");
         driver.manage().window().maximize();
 
