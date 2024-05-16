@@ -44,7 +44,6 @@ public class RegisterAccount {
         } catch (AssertionError e) {
             test.log(Status.FAIL, "The test was not successful. : " + e.getMessage());
             test.fail(MediaEntityBuilder.createScreenCaptureFromPath(screenShot.captureScreen(driver, 800, 600)).build());
-            //test.fail(MediaEntityBuilder.createScreenCaptureFromBase64String(captureScreen(driver)).build());
             Assert.assertEquals(actualTextRegLegemd, expectedTextRegLegend, "The text on the registration page does not match what was expected.");
         } catch (IOException e) {
             throw new RuntimeException(e);
