@@ -14,10 +14,6 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import ui_testing.naveen.pages.HomePage;
 import ui_testing.naveen.pages.RegisterAccount;
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 
@@ -39,25 +35,10 @@ public class TestToTest {
         extent.attachReporter(spark);
     }
 
-//    public static String captureScreen(WebDriver driver) throws IOException, IOException {
-//        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//        File Dest = new File("src/../ExecImages/" + System.currentTimeMillis() + ".png");
-//        String errFlPath = Dest.getAbsolutePath();
-//        FileUtils.copyFile(srcFile, Dest);
-//        return errFlPath;
-//    }
 
 
-    public static String captureScreen(WebDriver driver, int width, int height) throws IOException {
 
-        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        BufferedImage originalImage = ImageIO.read(srcFile);
-        BufferedImage resizedImage = new BufferedImage(width, height, originalImage.getType());
-        resizedImage.createGraphics().drawImage(originalImage, 0, 0, width, height, null);
-        File destFile = new File("src/../ExecImages/" + System.currentTimeMillis() + ".png");
-        ImageIO.write(resizedImage, "png", destFile);
-        return destFile.getAbsolutePath();
-    }
+
     @Test
     public void HomePageToRegisterTest() throws InterruptedException, IOException {
         test = extent.createTest("Validate Home to Register", "initial Validate");
